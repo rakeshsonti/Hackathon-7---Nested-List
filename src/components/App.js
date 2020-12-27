@@ -159,7 +159,11 @@ function App() {
    return (
       <div id="main">
          {states.map((state, idx) => (
-            <State id={`${state}${idx}`} key={`${state}${idx}`} state={state} />
+            <State
+               id={`state${idx + 1}`}
+               key={`${state}${idx}`}
+               state={state}
+            />
          ))}
       </div>
    );
@@ -182,7 +186,7 @@ export function State(props) {
             ? props.state.cities.map((city, idx) => {
                  return (
                     <City
-                       id={`${city}${idx}`}
+                       id={`city${idx + 1}`}
                        key={`${city}${idx}`}
                        city={city}
                     />
@@ -206,7 +210,7 @@ export function City(props) {
          </span>
          {townStatus
             ? props.city.towns.map((town, index) => (
-                 <span id={`${town}${index}`} key={`${town}${index}`}>
+                 <span id={`town${index + 1}`} key={`${town}${index}`}>
                     {town.name}
                  </span>
               ))
